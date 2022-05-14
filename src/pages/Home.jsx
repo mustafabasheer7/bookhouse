@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 
 const Home = () => {
   return (
-    <div className="text-3xl font-bold underline">
+    <div className="">
       <Header />
       <Footer />
     </div>

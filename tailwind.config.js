@@ -1,7 +1,13 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        oleo: ["Oleo Script Swash Caps", "cursive"],
+        poppins: ["Poppins", "sans-serif"],
+        yellowtail: ["Yellowtail", "cursive"],
+      },
+    },
   },
   plugins: [],
 };
