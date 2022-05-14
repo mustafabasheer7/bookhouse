@@ -6,6 +6,7 @@ module.exports = {
         oleo: ["Oleo Script Swash Caps", "cursive"],
         poppins: ["Poppins", "sans-serif"],
         yellowtail: ["Yellowtail", "cursive"],
+        lora: ["Lora", "serif"],
       },
     },
   },
