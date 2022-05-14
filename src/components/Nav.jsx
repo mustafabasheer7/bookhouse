@@ -28,7 +28,7 @@ const Nav = () => {
           <Search className="w-4 h-4 mr-1 text-yellow-500" />
           <input
             type="text"
-            className="bg-transparent outline-none text-sm sm:text-md font-semibold w-full"
+            className="bg-transparent outline-none text-xs sm:text-md sm:font-semibold w-full"
             placeholder="Search a book..."
           />
         </div>
