@@ -3,8 +3,8 @@ const Subjects = () => {
   return (
     <div className="bg-white m-10 rounded-lg border-2 pb-6">
       <div className="w-full flex justify-center items-center flex-col mb-8">
-        <h1 className="uppercase text-7xl p-10 text-teal-500 font-bold font-lora">
-          Book Subjects
+        <h1 className="uppercase font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl p-10 text-teal-500 font-lora text-center">
+          Popular Book Subjects
         </h1>
         {/* Horizontal Line */}
         <div className="border-b-2 border-gray-200 w-3/4"></div>

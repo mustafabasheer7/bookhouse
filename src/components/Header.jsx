@@ -1,4 +1,4 @@
-const Header = () => {
+const HomeHeader = ({ imgURL, title }) => {
   return (
     <div className="relative bg-black">
       <div className="absolute z-10 inset-x-0 inset-y-1/3">
@@ -7,14 +7,14 @@ const Header = () => {
             React & Open Library
           </span>
           <span className="uppercase font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-            The Books Website
+            {title}
           </span>
         </div>
       </div>
       <div className="border-b border-black">
         <img
-          src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1290&q=80"
-          alt="books"
+          src={imgURL}
+          alt="header"
           className="object-cover w-full h-[450px] brightness-50 filter blur-[2px]"
         />
       </div>
@@ -22,4 +22,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HomeHeader;

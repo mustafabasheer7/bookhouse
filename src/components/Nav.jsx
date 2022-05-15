@@ -1,4 +1,5 @@
 import { Search } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -6,17 +7,21 @@ const Nav = () => {
       {/* Left Side */}
       <div className="hidden md:block flex-[3]">
         <div className="flex items-center justify-center">
-          <span className="font-yellowtail font-bold text-4xl text-yellow-100 hover:text-yellow-300 cursor-pointer transition ease-in duration-200">
-            BookHouse
-          </span>
+          <Link to="/">
+            <span className="font-yellowtail font-bold text-4xl text-yellow-100 hover:text-yellow-300 cursor-pointer transition ease-in duration-200">
+              BookHouse
+            </span>
+          </Link>
         </div>
       </div>
       {/* Center */}
       <div className="flex-[4] md:flex-[6]">
         <ul className="flex items-center justify-center">
-          <li className="uppercase mr-3 sm:mr-6 text-sm sm:text-xl font-bold text-yellow-100 hover:text-yellow-300 transition ease-in duration-200 cursor-pointer tracking-wider">
-            Home
-          </li>
+          <Link to="/">
+            <li className="uppercase mr-3 sm:mr-6 text-sm sm:text-xl font-bold text-yellow-100 hover:text-yellow-300 transition ease-in duration-200 cursor-pointer tracking-wider">
+              Home
+            </li>
+          </Link>
           <li className="uppercase text-sm sm:text-xl font-bold text-yellow-100 hover:text-yellow-300 transition ease-in duration-200 cursor-pointer tracking-wider">
             Subjects
           </li>
