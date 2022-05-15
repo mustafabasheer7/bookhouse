@@ -50,7 +50,7 @@ const Subject = () => {
                   }}
                 >
                   <SplideSlide>
-                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer">
+                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer hover:brightness-110 transition ease-in duration-200">
                       <img
                         src="https://ia600607.us.archive.org/view_archive.php?archive=/22/items/olcovers24/olcovers24-L.zip&file=240727-L.jpg"
                         alt="book title"
@@ -62,7 +62,7 @@ const Subject = () => {
                     </div>
                   </SplideSlide>
                   <SplideSlide>
-                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer">
+                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer hover:brightness-110 transition ease-in duration-200">
                       <img
                         src="https://ia600607.us.archive.org/view_archive.php?archive=/22/items/olcovers24/olcovers24-L.zip&file=240727-L.jpg"
                         alt="book title"
@@ -74,7 +74,7 @@ const Subject = () => {
                     </div>
                   </SplideSlide>
                   <SplideSlide>
-                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer">
+                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer hover:brightness-110 transition ease-in duration-200">
                       <img
                         src="https://ia600607.us.archive.org/view_archive.php?archive=/22/items/olcovers24/olcovers24-L.zip&file=240727-L.jpg"
                         alt="book title"
@@ -86,7 +86,7 @@ const Subject = () => {
                     </div>
                   </SplideSlide>
                   <SplideSlide>
-                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer">
+                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer hover:brightness-110 transition ease-in duration-200">
                       <img
                         src="https://ia600607.us.archive.org/view_archive.php?archive=/22/items/olcovers24/olcovers24-L.zip&file=240727-L.jpg"
                         alt="book title"
@@ -98,7 +98,7 @@ const Subject = () => {
                     </div>
                   </SplideSlide>
                   <SplideSlide>
-                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer">
+                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer hover:brightness-110 transition ease-in duration-200">
                       <img
                         src="https://ia600607.us.archive.org/view_archive.php?archive=/22/items/olcovers24/olcovers24-L.zip&file=240727-L.jpg"
                         alt="book title"
@@ -110,7 +110,7 @@ const Subject = () => {
                     </div>
                   </SplideSlide>
                   <SplideSlide>
-                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer">
+                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer hover:brightness-110 transition ease-in duration-200">
                       <img
                         src="https://ia600607.us.archive.org/view_archive.php?archive=/22/items/olcovers24/olcovers24-L.zip&file=240727-L.jpg"
                         alt="book title"
@@ -122,7 +122,7 @@ const Subject = () => {
                     </div>
                   </SplideSlide>
                   <SplideSlide>
-                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer">
+                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer hover:brightness-110 transition ease-in duration-200">
                       <img
                         src="https://ia600607.us.archive.org/view_archive.php?archive=/22/items/olcovers24/olcovers24-L.zip&file=240727-L.jpg"
                         alt="book title"
@@ -134,7 +134,7 @@ const Subject = () => {
                     </div>
                   </SplideSlide>
                   <SplideSlide>
-                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer">
+                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer hover:brightness-110 transition ease-in duration-200">
                       <img
                         src="https://ia600607.us.archive.org/view_archive.php?archive=/22/items/olcovers24/olcovers24-L.zip&file=240727-L.jpg"
                         alt="book title"
@@ -146,7 +146,7 @@ const Subject = () => {
                     </div>
                   </SplideSlide>
                   <SplideSlide>
-                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer">
+                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer hover:brightness-110 transition ease-in duration-200">
                       <img
                         src="https://ia600607.us.archive.org/view_archive.php?archive=/22/items/olcovers24/olcovers24-L.zip&file=240727-L.jpg"
                         alt="book title"
@@ -158,7 +158,7 @@ const Subject = () => {
                     </div>
                   </SplideSlide>
                   <SplideSlide>
-                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer">
+                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer hover:brightness-110 transition ease-in duration-200">
                       <img
                         src="https://ia600607.us.archive.org/view_archive.php?archive=/22/items/olcovers24/olcovers24-L.zip&file=240727-L.jpg"
                         alt="book title"
@@ -170,7 +170,7 @@ const Subject = () => {
                     </div>
                   </SplideSlide>
                   <SplideSlide>
-                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer">
+                    <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center justify-center flex-col cursor-pointer hover:brightness-110 transition ease-in duration-200">
                       <img
                         src="https://ia600607.us.archive.org/view_archive.php?archive=/22/items/olcovers24/olcovers24-L.zip&file=240727-L.jpg"
                         alt="book title"
