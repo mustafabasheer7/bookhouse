@@ -1,10 +1,17 @@
-import Home from "./pages/Home";
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
+import Pages from "./pages/Pages";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <h1 className="font-poppins bg-gray-100">
-      <Home />
-    </h1>
+    <div className="font-poppins bg-gray-100 selection:bg-black selection:text-teal-500">
+      <BrowserRouter>
+        <Nav />
+        <Pages />
+        <Footer />
+      </BrowserRouter>
+    </div>
   );
 }
 

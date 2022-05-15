@@ -1,15 +1,11 @@
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Subjects from "../components/Subjects";
 
 const Home = () => {
   return (
-    <div className="">
-      <Nav />
+    <div className="min-h-screen">
       <Header />
       <Subjects />
-      <Footer />
     </div>
   );
 };

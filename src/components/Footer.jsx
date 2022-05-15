@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div className="relative bg-black mt-10">
       <div className="absolute z-10 inset-x-0 inset-y-1/3">
         <div className="flex flex-col items-center text-yellow-100 font-lora">
           <span className="text-sm md:text-lg lg:text-xl font-bold">
-            © Open Library API | Images used are from Unsplash
+            © Open Library API | Images used are from{" "}
+            <span className="text-teal-500">Unsplash</span>
           </span>
         </div>
       </div>
