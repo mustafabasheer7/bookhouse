@@ -25,10 +25,10 @@ const Subject = () => {
             {/* Horizontal Line */}
             <div className="border-b-2 border-gray-200 w-2/4 mt-2"></div>
             <div className="my-4 w-3/4 flex items-center justify-center flex-col">
-              <h1 className="text-md sm:text-lg md:text-xl lg:text-2xl font-bold text-center text-teal-500">
+              <h1 className="text-md sm:text-lg md:text-xl lg:text-2xl font-bold text-center">
                 Some Works in this Subject
               </h1>
-              <div className="m-4 w-full">
+              <div className="m-4 w-full cursor-grabbing">
                 <Splide
                   hasTrack={true}
                   options={{
@@ -45,7 +45,7 @@ const Subject = () => {
                     perPage: 3,
                     gap: "5rem",
                     pagination: false,
-                    arrows: false,
+                    arrows: true,
                     drag: "free",
                   }}
                 >
@@ -56,7 +56,7 @@ const Subject = () => {
                         alt="book title"
                         className="rounded-xl"
                       />
-                      <p className="text-lg mt-2 font-bold text-center">
+                      <p className="text-lg mt-2 font-bold text-center text-teal-500">
                         Book Title
                       </p>
                     </div>
@@ -68,7 +68,7 @@ const Subject = () => {
                         alt="book title"
                         className="rounded-xl"
                       />
-                      <p className="text-lg mt-2 font-bold text-center">
+                      <p className="text-lg mt-2 font-bold text-center text-teal-500">
                         Book Title
                       </p>
                     </div>
@@ -80,7 +80,7 @@ const Subject = () => {
                         alt="book title"
                         className="rounded-xl"
                       />
-                      <p className="text-lg mt-2 font-bold text-center">
+                      <p className="text-lg mt-2 font-bold text-center text-teal-500">
                         Book Title
                       </p>
                     </div>
@@ -92,7 +92,7 @@ const Subject = () => {
                         alt="book title"
                         className="rounded-xl"
                       />
-                      <p className="text-lg mt-2 font-bold text-center">
+                      <p className="text-lg mt-2 font-bold text-center text-teal-500">
                         Book Title
                       </p>
                     </div>
@@ -104,7 +104,7 @@ const Subject = () => {
                         alt="book title"
                         className="rounded-xl"
                       />
-                      <p className="text-lg mt-2 font-bold text-center">
+                      <p className="text-lg mt-2 font-bold text-center text-teal-500">
                         Book Title
                       </p>
                     </div>
@@ -116,7 +116,7 @@ const Subject = () => {
                         alt="book title"
                         className="rounded-xl"
                       />
-                      <p className="text-lg mt-2 font-bold text-center">
+                      <p className="text-lg mt-2 font-bold text-center text-teal-500">
                         Book Title
                       </p>
                     </div>
@@ -128,7 +128,7 @@ const Subject = () => {
                         alt="book title"
                         className="rounded-xl"
                       />
-                      <p className="text-lg mt-2 font-bold text-center">
+                      <p className="text-lg mt-2 font-bold text-center text-teal-500">
                         Book Title
                       </p>
                     </div>
@@ -140,7 +140,7 @@ const Subject = () => {
                         alt="book title"
                         className="rounded-xl"
                       />
-                      <p className="text-lg mt-2 font-bold text-center">
+                      <p className="text-lg mt-2 font-bold text-center text-teal-500">
                         Book Title
                       </p>
                     </div>
@@ -152,7 +152,7 @@ const Subject = () => {
                         alt="book title"
                         className="rounded-xl"
                       />
-                      <p className="text-lg mt-2 font-bold text-center">
+                      <p className="text-lg mt-2 font-bold text-center text-teal-500">
                         Book Title
                       </p>
                     </div>
@@ -164,7 +164,7 @@ const Subject = () => {
                         alt="book title"
                         className="rounded-xl"
                       />
-                      <p className="text-lg mt-2 font-bold text-center">
+                      <p className="text-lg mt-2 font-bold text-center text-teal-500">
                         Book Title
                       </p>
                     </div>
@@ -176,7 +176,7 @@ const Subject = () => {
                         alt="book title"
                         className="rounded-xl"
                       />
-                      <p className="text-lg mt-2 font-bold text-center">
+                      <p className="text-lg mt-2 font-bold text-center text-teal-500">
                         Book Title
                       </p>
                     </div>
