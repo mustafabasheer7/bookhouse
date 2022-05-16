@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import FadeLoader from "react-spinners/FadeLoader";
@@ -87,20 +87,22 @@ const Subject = () => {
                       {/* Looping Thorough The Works In The Subject */}
                       {subjectWorks.map((work) => (
                         <SplideSlide key={work.key}>
-                          <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center flex-col cursor-pointer hover:brightness-110 transition ease-in duration-200 mt-4">
-                            <img
-                              src={
-                                work.cover_id
-                                  ? `https://covers.openlibrary.org/b/id/${work.cover_id}-L.jpg`
-                                  : "/images/default-placeholder.png"
-                              }
-                              alt="book title"
-                              className="rounded-xl object-cover h-[300px] max-w-[200px]"
-                            />
-                            <p className="text-lg mt-2 font-bold text-center text-teal-500">
-                              {work.title}
-                            </p>
-                          </div>
+                          <Link to={work.key}>
+                            <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center flex-col cursor-pointer hover:brightness-125 text-teal-500 hover:text-teal-700 transition ease-in duration-200 mt-4">
+                              <img
+                                src={
+                                  work.cover_id
+                                    ? `https://covers.openlibrary.org/b/id/${work.cover_id}-L.jpg`
+                                    : "/images/default-placeholder.png"
+                                }
+                                alt="book title"
+                                className="rounded-xl object-cover h-[300px] max-w-[200px]"
+                              />
+                              <p className="text-lg mt-2 font-bold text-center">
+                                {work.title}
+                              </p>
+                            </div>
+                          </Link>
                         </SplideSlide>
                       ))}
                     </Splide>

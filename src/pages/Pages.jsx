@@ -7,8 +7,8 @@ const Pages = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/book/:bookId" element={<Book />} />
-      <Route path="/subject/:subjectTitle" element={<Subject />} />
+      <Route path="/works/:bookId" element={<Book />} />
+      <Route path="/subjects/:subjectTitle" element={<Subject />} />
     </Routes>
   );
 };
