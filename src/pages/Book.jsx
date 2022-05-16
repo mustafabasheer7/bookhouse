@@ -24,10 +24,10 @@ const Book = () => {
             />
             <div className="p-6 flex flex-col justify-around gap-6">
               <span className="flex items-center">
-                <b className="text-teal-500 hidden md:block flex-1 mr-2">
+                <b className="text-teal-500 hidden md:block flex-1 mr-2 text-lg lg:text-2xl xl:text-3xl">
                   description:{" "}
                 </b>
-                <span className="hidden md:block flex-[5]">
+                <span className="hidden md:block flex-[5] md:text-sm lg:text-lg xl:text-xl">
                   The main character of Fantastic Mr. Fox is an extremely clever
                   anthropomorphized fox named Mr. Fox. He lives with his wife
                   and four little foxes. In order to feed his family, he steals
@@ -50,20 +50,26 @@ const Book = () => {
                 </span>
               </span>
               <span className="flex items-center flex-col md:flex-row">
-                <b className="text-teal-500 flex-1 mr-2">author(s): </b>
-                <span className="flex-[5] text-center md:text-left">
+                <b className="text-teal-500 flex-1 mr-2 text-lg lg:text-2xl xl:text-3xl">
+                  author(s):{" "}
+                </b>
+                <span className="flex-[5] text-center md:text-left text-sm lg:text-lg xl:text-xl">
                   Roald Dahl
                 </span>
               </span>
               <span className="flex items-center flex-col md:flex-row">
-                <b className="text-teal-500 flex-1 mr-2">Genre: </b>
-                <span className="flex-[5] text-center md:text-left">
+                <b className="text-teal-500 flex-1 mr-2 text-lg lg:text-2xl xl:text-3xl">
+                  Genre:{" "}
+                </b>
+                <span className="flex-[5] text-center md:text-left text-sm lg:text-lg xl:text-xl">
                   Children's literature, Novel, Fiction
                 </span>
               </span>
               <span className="flex items-center flex-col md:flex-row">
-                <b className="text-teal-500 flex-1 mr-2">Characters: </b>
-                <span className="flex-[5] text-center md:text-left">
+                <b className="text-teal-500 flex-1 mr-2 text-lg lg:text-2xl xl:text-3xl">
+                  Characters:{" "}
+                </b>
+                <span className="flex-[5] text-center md:text-left text-sm lg:text-lg xl:text-xl">
                   Mr. Fox, Mrs. Fox, Nathan Bunce, Walter Boggis, Franklin Bean
                 </span>
               </span>
