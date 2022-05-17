@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import FadeLoader from "react-spinners/FadeLoader";
@@ -9,31 +9,47 @@ import FadeLoader from "react-spinners/FadeLoader";
 const Subject = () => {
   const [numberOfWorks, setNumberOfWorks] = useState(null);
   const [subjectWorks, setSubjectWorks] = useState([]);
-  let subjectName = useParams();
+  const location = useLocation();
+  const title = location.state.title;
+  let searchQuery = "";
+  if (title.search) {
+    let url = window.location.href;
+    searchQuery = url.split("search")[1];
+  }
 
   useEffect(() => {
     const getSubjectData = async () => {
       try {
-        const response = await axios.get(
-          process.env.REACT_APP_API_URL +
-            "/subjects/" +
-            subjectName.subjectTitle +
-            ".json?limit=10"
-        );
-        const { works, ...other } = response.data;
-        setNumberOfWorks(other.work_count);
-        setSubjectWorks(works);
+        // If it is a search query:
+        if (searchQuery) {
+          const response = await axios.get(
+            process.env.REACT_APP_API_URL +
+              "/search.json" +
+              searchQuery +
+              "&limit=10"
+          );
+          const { docs, ...other } = response.data;
+          setNumberOfWorks(other.numFound);
+          setSubjectWorks(docs);
+        }
+        // If it is just a subject:
+        else {
+          const response = await axios.get(
+            process.env.REACT_APP_API_URL +
+              "/subjects/" +
+              title.split(" ").join("_").toLowerCase() +
+              ".json?limit=10"
+          );
+          const { works, ...other } = response.data;
+          setNumberOfWorks(other.work_count);
+          setSubjectWorks(works);
+        }
       } catch (error) {
         console.log(error);
       }
     };
     getSubjectData();
-  }, [subjectName, numberOfWorks]);
-
-  console.log(
-    subjectWorks,
-    "worksworksworksworksworksworksworksworksworksworksworksworksworksworksworksworksworks"
-  );
+  }, [location.state.title, numberOfWorks, searchQuery, title]);
 
   return (
     <div className="min-h-screen">
@@ -44,7 +60,7 @@ const Subject = () => {
       <div className="bg-white m-10 rounded-lg border-2 pb-6 h-full">
         <div className="w-full flex justify-center items-center flex-col mb-8">
           <h1 className="uppercase font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl p-10 text-teal-500 font-lora text-center">
-            {subjectName.subjectTitle.replaceAll("_", " ")}
+            {title}
           </h1>
           {/* Horizontal Line */}
           <div className="border-b-2 border-gray-200 w-3/4"></div>
@@ -88,17 +104,21 @@ const Subject = () => {
                       {subjectWorks.map((work) => (
                         <SplideSlide key={work.key}>
                           <Link to={work.key}>
-                            <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center flex-col cursor-pointer hover:brightness-125 text-teal-500 hover:text-teal-700 transition ease-in duration-200 mt-4">
+                            <div className="min-h-[25rem] rounded-xl overflow-hidden flex items-center flex-col cursor-pointer hover:brightness-125 text-teal-500 hover:text-teal-700 transition ease-in duration-200 mt-4hidden h-full w-full">
                               <img
                                 src={
-                                  work.cover_id
-                                    ? `https://covers.openlibrary.org/b/id/${work.cover_id}-L.jpg`
+                                  work.cover_id || work.cover_i
+                                    ? `https://covers.openlibrary.org/b/id/${
+                                        work.cover_id
+                                          ? work.cover_id
+                                          : work.cover_i
+                                      }-L.jpg`
                                     : "/images/default-placeholder.png"
                                 }
                                 alt="book title"
                                 className="rounded-xl object-cover h-[300px] max-w-[200px]"
                               />
-                              <p className="text-lg mt-2 font-bold text-center">
+                              <p className="text-sm sm:text-lg md:text-xl mt-2 font-bold text-center">
                                 {work.title}
                               </p>
                             </div>

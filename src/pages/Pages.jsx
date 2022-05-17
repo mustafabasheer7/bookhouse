@@ -8,6 +8,7 @@ const Pages = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/works/:bookId" element={<Book />} />
+      <Route path="/:search" element={<Subject />} />
       <Route path="/subjects/:subjectTitle" element={<Subject />} />
     </Routes>
   );

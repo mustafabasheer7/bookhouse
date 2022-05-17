@@ -4,7 +4,7 @@ const HomeHeader = ({ imgURL, title }) => {
       <div className="absolute z-10 inset-x-0 inset-y-1/3">
         <div className="flex flex-col items-center text-yellow-100 font-lora">
           <span className="text-xl md:text-2xl lg:text-3xl font-bold">
-            React & Open Library
+            using React & Open Library
           </span>
           <span className="uppercase font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
             {title}

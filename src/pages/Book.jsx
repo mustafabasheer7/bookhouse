@@ -40,11 +40,11 @@ const Book = () => {
         imgURL="https://images.unsplash.com/photo-1615791287388-6f1bd87ace4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80"
         title="Book Information"
       />
-      <div className="bg-white m-10 rounded-lg border-2 pb-6 h-full">
+      <div className="bg-white m-10 rounded-lg border-2 pb-6 h-full min-h-[750px] lg:min-h-[900px]">
         {Object.keys(bookInfo).length > 0 &&
         bookTitle !== "" &&
         authorName !== "" ? (
-          <div className="w-full flex justify-center items-center flex-col mb-8">
+          <div className="w-full h-full flex justify-center items-center flex-col mb-8">
             <h1 className="uppercase font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl p-10 text-teal-500 font-lora text-center">
               {bookTitle}
             </h1>
@@ -67,9 +67,12 @@ const Book = () => {
                     description:
                   </b>
                   <span className="hidden md:block flex-[5] md:text-sm lg:text-xl">
-                    {bookInfo.description
+                    {!bookInfo.description
+                      ? "This book doesn't have a description yet :("
+                      : // Some Books Have Descriptions of type string, and some have description of type object.
+                      typeof bookInfo.description === "string"
                       ? bookInfo.description
-                      : "This book doesn't have a description yet :("}
+                      : bookInfo.description.value}
                   </span>
                 </span>
                 <span className="flex items-center flex-col md:flex-row">
@@ -104,9 +107,9 @@ const Book = () => {
           </div>
         ) : (
           // Loading Spinner (Using React Spinners)
-          <p className="h-full w-full flex items-center justify-center">
+          <div className="min-h-[750px] lg:min-h-[900px] flex items-center justify-center text-center">
             <FadeLoader color={"#14b8a6"} size={75} />
-          </p>
+          </div>
         )}
       </div>
     </div>
