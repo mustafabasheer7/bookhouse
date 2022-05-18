@@ -1,6 +1,6 @@
 import { MenuBook } from "@mui/icons-material";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import axios from "axios";
 import FadeLoader from "react-spinners/FadeLoader";
@@ -34,6 +34,7 @@ const Book = () => {
     };
     getBookData();
   }, [workId]);
+  console.log(bookInfo.subjects);
   return (
     <div className="min-h-screen">
       <Header
@@ -45,22 +46,34 @@ const Book = () => {
         bookTitle !== "" &&
         authorName !== "" ? (
           <div className="w-full h-full flex justify-center items-center flex-col mb-8">
-            <h1 className="uppercase font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl p-10 text-teal-500 font-lora text-center">
-              {bookTitle}
-            </h1>
+            <a
+              href={process.env.REACT_APP_API_URL + bookInfo.key}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <h1 className="uppercase font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl p-10 text-teal-500 hover:text-teal-700 transition duration-150 ease-out hover:ease-in font-lora text-center">
+                {bookTitle}
+              </h1>
+            </a>
             {/* Horizontal Line */}
             <div className="border-b-2 border-gray-200 w-3/4 mb-8"></div>
             {/* Subject Information */}
             <div className="my-4 p-4 flex items-center justify-between flex-col w-11/12 md:w-6/7 xl:w-2/3 bg-yellow-100 border-2 rounded-xl min-h-[630px] lg:min-h-[800px]">
-              <img
-                src={
-                  bookInfo.covers
-                    ? `https://covers.openlibrary.org/b/id/${bookInfo.covers[0]}-L.jpg`
-                    : "/images/default-placeholder.png"
-                }
-                alt="book cover"
-                className="w-32 sm:w-52 lg:w-80 rounded-lg border-2 border-black mt-8 max-h-[460px] max-w-[300px] object-cover"
-              />
+              <a
+                href={process.env.REACT_APP_API_URL + bookInfo.key}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={
+                    bookInfo.covers
+                      ? `https://covers.openlibrary.org/b/id/${bookInfo.covers[0]}-L.jpg`
+                      : "/images/default-placeholder.png"
+                  }
+                  alt="book cover"
+                  className="w-32 sm:w-52 lg:w-80 rounded-lg border-2 border-black mt-8 max-h-[460px] max-w-[300px] object-cover hover:brightness-110 transition duration-150 ease-out hover:ease-in"
+                />
+              </a>
               <div className="p-6 flex flex-col justify-around gap-6 w-full">
                 <span className="flex items-center">
                   <b className="text-teal-500 hidden md:block flex-1 mr-8 lg:mr-2 text-lg lg:text-xl w-[60px]">
@@ -87,9 +100,23 @@ const Book = () => {
                   <b className="text-teal-500 flex-1 mr-8 lg:mr-2 text-lg lg:text-xl w-[60px]">
                     Genre(s):
                   </b>
-                  <span className="flex-[5] text-center md:text-left text-sm lg:text-xl">
-                    {bookInfo.subjects.join(", ")}
-                  </span>
+                  <div className="flex-[5] text-center md:text-left text-sm lg:text-xl">
+                    {bookInfo.subjects.map((subjectName, i) => (
+                      <Link
+                        to={
+                          "/subjects/" +
+                          subjectName.split(" ").join("_").toLowerCase()
+                        }
+                        state={{ title: subjectName }}
+                      >
+                        <span className="hover:text-teal-500">
+                          {subjectName}
+                          {subjectName.length === i + 1 ? "" : ", "}
+                        </span>
+                      </Link>
+                    ))}
+                    {/* {bookInfo.subjects} */}
+                  </div>
                 </span>
                 <a
                   href={process.env.REACT_APP_API_URL + bookInfo.key}
