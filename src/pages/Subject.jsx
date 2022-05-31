@@ -4,13 +4,14 @@ import { useLocation, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import FadeLoader from "react-spinners/FadeLoader";
-import { MenuBook } from "@mui/icons-material";
+import { MenuBook, MenuBookOutlined } from "@mui/icons-material";
 import WorksList from "../components/WorksList";
 
 const Subject = () => {
   const [numberOfWorks, setNumberOfWorks] = useState(null);
   const [subjectWorks, setSubjectWorks] = useState([]);
   const [thereAreWorks, setThereAreWorks] = useState(true);
+  const [offsetNumber, setOffsetNumber] = useState(10);
   const location = useLocation();
   const params = useParams();
   // if the request is from "/subjects/:subjectTitle" or "/search?:query"
@@ -21,6 +22,37 @@ const Subject = () => {
     let url = window.location.href;
     searchQuery = url.split("search")[1];
   }
+
+  const handleClick = async () => {
+    if (searchQuery) {
+      const response = await axios.get(
+        process.env.REACT_APP_API_URL +
+          "/search.json" +
+          searchQuery +
+          "&offset=" +
+          offsetNumber +
+          "&limit=10"
+      );
+      let newList = [...subjectWorks, ...response.data.docs];
+      setSubjectWorks(newList);
+      const newOffset = offsetNumber + 10;
+      setOffsetNumber(newOffset);
+    } else {
+      //if it is just a subject
+      const response = await axios.get(
+        process.env.REACT_APP_API_URL +
+          "/subjects/" +
+          title.split(" ").join("_").toLowerCase() +
+          ".json?offset=" +
+          offsetNumber +
+          "&limit=10"
+      );
+      let newList = [...subjectWorks, ...response.data.works];
+      setSubjectWorks(newList);
+      const newOffset = offsetNumber + 10;
+      setOffsetNumber(newOffset);
+    }
+  };
 
   useEffect(() => {
     const getSubjectData = async () => {
@@ -83,7 +115,7 @@ const Subject = () => {
             {/* Horizontal Line */}
             <div className="border-b-2 border-gray-200 w-3/4"></div>
             {/* Subject Information */}
-            <div className="my-4 p-4 flex items-center justify-between flex-col w-11/12 md:w-6/7 xl:w-2/3 bg-yellow-100 border-2 rounded-xl h-[600px]">
+            <div className="my-4 p-4 flex items-center justify-between flex-col w-11/12 md:w-6/7 xl:w-2/3 bg-yellow-100 border-2 rounded-xl h-[720px]">
               {numberOfWorks && subjectWorks ? (
                 <>
                   <span className="text-gray-800 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center">
@@ -99,6 +131,15 @@ const Subject = () => {
                     </h1>
                     <WorksList subjectWorks={subjectWorks} />
                   </div>
+                  <button
+                    onClick={handleClick}
+                    className="inline-block mt-4 cursor-pointer py-4 px-4 md:px-8 border-2 border-black text-sm md:text-xl lg:text-2xl monitor:text-3xl hover:bg-teal-500 hover:text-white font-bold transform hover:scale-110 transition duration-150 ease-out hover:ease-in w-10/11 md:w-2/4 xl:w-3/7 self-center"
+                  >
+                    <div className="flex items-center justify-center">
+                      <MenuBookOutlined className="transform scale-150 mr-4 text-black" />
+                      <span>Load More Books</span>
+                    </div>
+                  </button>
                 </>
               ) : (
                 // Loading Spinner (Using React Spinners)
